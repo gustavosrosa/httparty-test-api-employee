@@ -11,6 +11,20 @@ Entao('uma lista de produtos deve retornar') do
   expect(@list_employee.message).to eql "OK"
 end
 
+Dado('que o usuario consulte informacoes de produto que nao existe') do
+  @get_url_9999 = "https://api.restful-api.dev/objects/9999"
+end
+
+Quando('ele realizar a pesquisa de um produto inexistente') do
+  @list_employee = HTTParty.get(@get_url_9999)
+end
+
+Entao('deve mostrar um erro de produto nao encontrado') do
+  expect(@list_employee.code).to eql 404
+  expect(@list_employee.message).to eql 'Not Found'
+  expect(@list_employee['error']).to eql 'Oject with id=9999 was not found.'
+end
+
 Dado('que o usuario deseja incluir um produto') do
   @post_url = "https://api.restful-api.dev/objects"
 end

@@ -10,6 +10,11 @@ Funcionalidade: Manipular Produtos
         Quando ele realizar a pesquisa
         Entao uma lista de produtos deve retornar
     
+    Cenario: Buscar informacoes de um produto inexistente
+        Dado que o usuario consulte informacoes de produto que nao existe
+        Quando ele realizar a pesquisa de um produto inexistente
+        Entao deve mostrar um erro de produto nao encontrado
+    
     Cenario: Cadastrar um novo produto
         Dado que o usuario deseja incluir um produto
         Quando ele realizar a requisicao
