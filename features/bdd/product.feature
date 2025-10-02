@@ -1,0 +1,16 @@
+# language: pt
+
+Funcionalidade: Manipular Produtos
+    Para averiguar informacoes
+    O usuario do sistema
+    Deseja poder manipular informacoes dos Produtos
+
+    Cenario: Buscar informacoes do produto
+        Dado que o usuario consulte informacoes de produto
+        Quando ele realizar a pesquisa
+        Entao uma lista de produtos deve retornar
+    
+    Cenario: Cadastrar um novo produto
+        Dado que o usuario deseja incluir um produto
+        Quando ele realizar a requisicao
+        Entao deve cadastrar um novo produto
