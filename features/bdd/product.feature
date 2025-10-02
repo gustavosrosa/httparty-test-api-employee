@@ -19,3 +19,13 @@ Funcionalidade: Manipular Produtos
         Dado que o usuario deseja incluir um produto
         Quando ele realizar a requisicao
         Entao deve cadastrar um novo produto
+    
+    Cenario: Alterar um novo produto
+        Dado que o usuario deseja alterar um produto
+        Quando ele realizar a requisicao de alteracao de produto
+        Entao deve alterar um novo produto com sucesso
+    
+    Cenario: Alterar um produto inexistente 
+        Dado que o usuario deseja alterar um produto inexistente
+        Quando ele realizar a requisicao de alteracao de produto inexistente
+        Entao deve mostrar um erro de produto nao existe
