@@ -53,7 +53,7 @@ Entao('deve cadastrar um novo produto') do
 end
 
 Dado('que o usuario deseja alterar um produto') do
-  @put_url = 'https://api.restful-api.dev/objects/ff8081819782e69e0199a5313fce2156'
+  @put_url = 'https://api.restful-api.dev/objects/ff8081819782e69e0199a5615f842234'
 end
 
 Quando('ele realizar a requisicao de alteracao de produto') do
@@ -73,7 +73,7 @@ Entao('deve alterar um novo produto com sucesso') do
   @data = @put_product['data']
   expect(@put_product.code).to eql 200
   expect(@put_product.message).to eql 'OK'
-  expect(@put_product['id']).to eql 'ff8081819782e69e0199a5313fce2156'
+  expect(@put_product['id']).to eql 'ff8081819782e69e0199a5615f842234'
   expect(@put_product['name']).to eql "Apple MacBook Pro 16"
   expect(@data['year']).to eql 2019
   expect(@data['price']).to eql 2049.99
@@ -103,4 +103,17 @@ Entao('deve mostrar um erro de produto nao existe') do
   expect(@put_product_not_exist.code).to eql 404
   expect(@put_product_not_exist.message).to eql 'Not Found'
   expect(@put_product_not_exist['error']).to eql "The Object with id = ff8081819782e69e0199a5313fce2151 doesn't exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PUT request after that."
+end
+
+Dado('que o usuario deseja excluir um produto') do
+  @put_url = 'https://api.restful-api.dev/objects/ff8081819782e69e0199a5615f842234'
+end
+
+Quando('ele realizar a requisicao de exclusao de produto') do
+  @delete_product = HTTParty.delete(@put_url)
+end
+
+Entao('deve excluir um produto com sucesso') do
+  expect(@delete_product.code).to eql 200
+  expect(@delete_product.message).to eql 'OK'
 end

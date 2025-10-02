@@ -29,3 +29,8 @@ Funcionalidade: Manipular Produtos
         Dado que o usuario deseja alterar um produto inexistente
         Quando ele realizar a requisicao de alteracao de produto inexistente
         Entao deve mostrar um erro de produto nao existe
+    
+    Cenario: Excluir um produto
+        Dado que o usuario deseja excluir um produto
+        Quando ele realizar a requisicao de exclusao de produto
+        Entao deve excluir um produto com sucesso
